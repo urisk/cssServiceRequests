@@ -1,0 +1,94 @@
+<div id="nav_new" class="nav_container newServiceRequest" ng-controller="newServiceRequestController">
+    <div id="new_service_status">
+    <p>&#10004 Thanks for your submitted request.</p>
+    <p>You will be receiving an email notification when the service request has been assigned to a technician.</p>
+    <p>You can check the progress on this and other service requests that you have submitted using the Search Tab.</p>
+    </div>
+    <div id="new_service_error_status">
+        <p>&#10005 An Error Occurred.</p>
+        <p>Unfortunately an Error occurred while trying to submit the Service Request. Please try again.</p>
+        <p>If you continue to have problems, please contact CSS at (541)343-9160.</p>
+    </div>
+    <div id="ServiceRequest-form" class="input-form">
+        <form id="ServiceRequestForm" name="ServiceRequestForm" method="post" enctype="multipart/form-data">
+            <fieldset>
+            <legend>New Service Request</legend>
+                <ul>
+                    <li>
+                        <label for="new_name">Requestor</label>
+                        <input type="text" name="new_requestor" id="new_requestor" size="50" required/>
+                        <label for="new_requestor" class="error"></label>
+                    </li>
+                    <li>
+                        <label for="new_name">Contact Name</label>
+                        <input type="text" name="new_name" id="new_name" size="50" required/>
+                        <label for="new_name" class="error"></label>
+                    </li>
+                    <li>
+                        <label for="new_email">Contact Email</label>
+                        <input type="text" name="new_email" id="new_email" size="50" required/>
+                        <label for="new_email" class="error"></label>
+                    </li>
+                    <li>
+                        <label for="new_phone">Contact Phone</label>
+                        <input type="text" name="new_phone" id="new_phone" size="50"/>
+                        <label for="new_phone" class="error"></label>
+                    </li>
+                    <li>
+                        <label for="new_wrq">Work Request</label>
+                        <select name="new_wrq" id="new_wrq"  required
+                                ng-options="WorkRequestCodes.wrq as WorkRequestCodes.Descr">
+
+                        </select>
+                        <label for="new_wrq" class="error"></label>
+                    </li>
+                    <li>
+                        <label for="new_dpt">Department</label>
+                        <select name="new_dpt" id="new_dpt" required >
+
+                        </select>
+                        <label for="new_dpt" class="error"></label>
+                    </li>
+                    <li>
+                        <label for="new_agy">Budget Unit</label>
+                        <select name="new_agy" id="new_agy" required>
+
+                        </select>
+                        <label for="new_agy" class="error"></label>
+                    </li>
+
+                    <li>
+                        <label for="new_bdg">Building</label>
+                        <select name="new_bdg" id="new_bdg" required>
+
+                        </select>
+                        <label for="new_bdg" class="error"></label>
+                    </li>
+                    <li>
+                        <!--hide for now-->
+                        <label for="new_loc" style="display: none">Location</label>
+                        <input type="text" name="new_loc" id="new_loc" size="50" style="display: none"/>
+                        <label for="new_loc" class="error" style="display: none"></label>
+                    </li>
+                    <li>
+                            <label for="new_problem">Problem:</label>
+                   </li>
+                    <li>
+                        <textarea name="new_problem" id="new_problem" rows="20" cols="88" required></textarea>
+                    </li>
+                    <li>
+                        <div id="file_container">
+                            <label for="fileToUpload">Attach a file: </label>
+                            <input type="file" name="fileToUpload" id="fileToUpload"> 
+                        </div>
+                    </li>
+                </ul>
+    <!--        </fieldset>-->
+                <input type="submit" id="new_request_button" value="Submit Service Request" >
+    <!--          <button id="new_request_button">Submit Service Request</button>-->
+
+            </fieldset>
+        </form>
+    </div>
+</div>
+
