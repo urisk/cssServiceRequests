@@ -2,20 +2,16 @@
 Cascade Software Systems.
 Copyright 2015
 -->
-<!--TODO: Revisit Enabling the HTML 5 mode for friendly urls.  
-          I currently couldn't get it to work.  I know why.  It is
-          because I am not starting at the root.  I am a little nervous
-          though, because the root may not be constant in all sites.
-          So I may need a session variable or something.
+<!--TODO: Need to make the base href dynamic.
 -->
 
 <div ng-app="cssServiceRequest">
 
     <div id="serv_nav">
         <ul>
-            <li id="new" class="tab tab_active" ><a ng-href="#/new">New</a></li>
+            <li id="new" class="tab tab_active" ><a ng-href="new">New</a></li>
 
-            <li id="search" class="tab"><a ng-href="#/search">Search</a></li>
+            <li id="search" class="tab"><a ng-href="search">Search</a></li>
         </ul>
     <ng-view></ng-view>
     </div>   

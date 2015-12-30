@@ -7,6 +7,7 @@ and open the template in the editor.
 <!doctype html>
 <html>
     <head>
+        <base href="/cssServiceRequests/">
         <meta charset="utf-8"> 
 
         <!-- External Fonts-->
@@ -28,7 +29,6 @@ and open the template in the editor.
             require "includes/users.php";
 	?>
         <title><?php echo $countyName." "?> Service Requests</title>
-
     </head>
 
     <body>

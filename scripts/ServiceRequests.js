@@ -3,16 +3,19 @@
  * Copyright 2015
  */
 angular.module("cssServiceRequest",['ngRoute'])
-.config(['$routeProvider',function($routeProvider){
+.config(['$routeProvider','$locationProvider',function($routeProvider,$locationProvider){
         $routeProvider
         .when('/new', {
-           templateUrl:'views/newServiceRequest.html' 
+           templateUrl:'views/newServiceRequest.html',
+           controller:'newServiceRequestController'
         })
         .when('/search', {
-           templateUrl:'views/searchServiceRequest.html' 
+           templateUrl:'views/searchServiceRequest.html',
+           controller:'searchServiceRequestController'
         })
         .otherwise({templateUrl:'views/newServiceRequest.html'});
-        
+
+        $locationProvider.html5Mode(true); //to allow html 5 path standards
 }])
 
 .factory('WorkRequestCodesService',function(){
