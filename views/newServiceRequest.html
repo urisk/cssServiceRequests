@@ -1,4 +1,4 @@
-<div id="nav_new" class="nav_container newServiceRequest" ng-controller="newServiceRequestController">
+<div id="nav_new" class="nav_container newServiceRequest" ng-controller="newServiceRequestFormController">
     <div id="new_service_status">
     <p>&#10004 Thanks for your submitted request.</p>
     <p>You will be receiving an email notification when the service request has been assigned to a technician.</p>
@@ -10,42 +10,42 @@
         <p>If you continue to have problems, please contact CSS at (541)343-9160.</p>
     </div>
     <div id="ServiceRequest-form" class="input-form">
-        <form class="form" role="form" id="ServiceRequestForm" name="ServiceRequestForm" method="post" enctype="multipart/form-data">
+        <form class="form" role="form" id="ServiceRequestForm" name="ServiceRequestForm" ng-submit='submitNewSrq(newSrqForm)' enctype="multipart/form-data">
             <fieldset>
             <legend>New Service Request</legend>
                 <ul>
                     <li>
                         <label for="new_name">Requestor</label>
                         <input type="text" name="new_requestor" 
-                               ng-model="newSrq.requestor" 
+                               ng-model="newSrqForm.requestor" 
                                id="new_requestor" size="50" required/>
                         <label for="new_requestor" class="error"></label>
                     </li>
                     <li>
                         <label for="new_name">Contact Name</label>
                         <input type="text" name="new_name" id="new_name"  
-                               ng-model="newSrq.name" 
+                               ng-model="newSrqForm.name" 
                                size="50" required/>
                         <label for="new_name" class="error"></label>
                     </li>
                     <li>
                         <label for="new_email">Contact Email</label>
                         <input type="text" name="new_email" id="new_email" 
-                               ng-model="newSrq.email"  
+                               ng-model="newSrqForm.email"  
                                size="50" required/>
                         <label for="new_email" class="error"></label>
                     </li>
                     <li>
                         <label for="new_phone">Contact Phone</label>
                         <input type="text" name="new_phone" id="new_phone" 
-                                ng-model="newSrq.phone" size="50"/>
+                                ng-model="newSrqForm.phone" size="50"/>
                         <label for="new_phone" class="error"></label>
                     </li>
                     <li>
                         <label for="new_wrq">Work Request</label>
                         <select name="new_wrq" id="new_wrq"  
-                                ng-model="newSrq.wrq" required
-                                ng-options="WorkRequestCodes.wrq as WorkRequestCodes.Descr">
+                                ng-model="newSrqForm.wrq" required
+                                ng-options="WrqCode.wrq as WrqCode.descr for WrqCode in newServiceRequestController.WrqCodes">
 
                         </select>
                         <label for="new_wrq" class="error"></label>
@@ -53,7 +53,7 @@
                     <li>
                         <label for="new_dpt">Department</label>
                         <select name="new_dpt" id="new_dpt" 
-                                 ng-model="newSrq.dpt" required >
+                                 ng-model="newSrqForm.dpt" required >
 
                         </select>
                         <label for="new_dpt" class="error"></label>
@@ -61,7 +61,7 @@
                     <li>
                         <label for="new_agy">Budget Unit</label>
                         <select name="new_agy" id="new_agy" 
-                                 ng-model="newSrq.agy" required>
+                                 ng-model="newSrqForm.agy" required>
 
                         </select>
                         <label for="new_agy" class="error"></label>
@@ -70,7 +70,7 @@
                     <li>
                         <label for="new_bdg">Building</label>
                         <select name="new_bdg" id="new_bdg" 
-                                 ng-model="newSrq.bdg" required>
+                                 ng-model="newSrqForm.bdg" required>
 
                         </select>
                         <label for="new_bdg" class="error"></label>
@@ -79,7 +79,7 @@
                         <!--hide for now-->
                         <label for="new_loc" style="display: none">Location</label>
                         <input type="text" name="new_loc" id="new_loc" 
-                                ng-model="newSrq.loc" size="50" style="display: none"/>
+                                ng-model="newSrqForm.loc" size="50" style="display: none"/>
                         <label for="new_loc" class="error" style="display: none"></label>
                     </li>
                     <li>
@@ -87,7 +87,7 @@
                    </li>
                     <li>
                         <textarea name="new_problem" id="new_problem" 
-                                   ng-model="newSrq.problem" 
+                                   ng-model="newSrqForm.problem" 
                                    rows="20" cols="88" required></textarea>
                     </li>
                     <li>
@@ -102,6 +102,11 @@
     <!--          <button id="new_request_button">Submit Service Request</button>-->
 
             </fieldset>
+            <tr ng-repeat="Wrq in newServiceRequestController.Wrq">
+                    <td>{{Wrq.Wrq}}</td>
+                    <td>{{Wrq.descr}}</td>
+                    
+            </tr>
         </form>
     </div>
 </div>

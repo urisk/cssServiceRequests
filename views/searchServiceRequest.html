@@ -1,1 +1,26 @@
-<div><h1>Search</h1></div>
+<div id="nav_search" class="nav_container searchServiceRequest" ng-controller="searchServiceRequestFormController">
+    <div id="ServiceRequest-form" class="input-form">
+        <form class="form" role="form" id="ServiceRequestForm" 
+              name="ServiceRequestForm">
+            <fieldset>
+            <legend>Search Service Request</legend>
+                <ul>
+                    <li>
+                        <label for="new_wrq">Work Request</label>
+                        <select name="new_wrq" id="new_wrq"  
+                                ng-model="newSrqForm.wrq" required
+                                ng-options="WrqCode.wrq as WrqCode.descr for WrqCode in searchServiceRequestController.WrqCodes">
+
+                        </select>
+                        <label for="new_wrq" class="error"></label>
+                    </li>
+                </ul>
+            </fieldset>
+            <!--<tr ng-repeat="Wrq in searchServiceRequestController.Wrq">
+                    <td>{{Wrq.Wrq}}</td>
+                    <td>{{Wrq.descr}}</td>
+                    
+            </tr>-->
+        </form>
+    </div>
+</div>

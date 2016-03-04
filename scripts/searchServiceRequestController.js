@@ -1,5 +1,6 @@
 angular.module('cssServiceRequest')
-.controller("newServiceRequestController",['$scope', '$log','WorkRequestCodesService', 
-    function($scope,$log, WorkRequestCodeService){
-    
+.controller("searchServiceRequestFormController",['WrqFactory',
+    function(WrqFactory){
+        WrqCodes = WrqFactory.getAllWrqCodes();
+        alert(WrqCodes[2].descr);
 }]);

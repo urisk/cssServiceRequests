@@ -7,24 +7,16 @@ angular.module("cssServiceRequest",['ngRoute'])
         $routeProvider
         .when('/new', {
            templateUrl:'views/newServiceRequest.html',
-           controller:'newServiceRequestController'
+           controller:'newSrqFormController',
+           controllerAs:'newSrqController'
         })
         .when('/search', {
            templateUrl:'views/searchServiceRequest.html',
-           controller:'searchServiceRequestController'
+           controller:'searchSrqFormController',
+           controllerAs:'searchSrqController'
         })
         .otherwise({templateUrl:'views/newServiceRequest.html'});
 
         $locationProvider.html5Mode(true); //to allow html 5 path standards
-}])
+}]);
 
-.factory('WorkRequestCodesService',function(){
-    var WorkRequestCodes = {};
-    
-    WorkRequestCodes.getWorkRequestCodes = function(){
-        return [{Wrq:'BTM01',Descr:'ACCESS CONTROL/CARD READERS'},
-                {Wrq:'BTM02',Descr:'APPLIANCE REPAIRS/REPLACEMENT'},
-                {Wrq:'BTM03',Descr:'AUDIO VISUAL REPAIR'}];
-    };
-    return WorkRequestCodes;
-});
