@@ -1,4 +1,4 @@
-<div id="nav_new" class="nav_container newServiceRequest" ng-controller="newServiceRequestFormController">
+<div id="nav_new" class="nav_container newServiceRequest" ng-controller="newSrqFormController">
     <div id="new_service_status">
     <p>&#10004 Thanks for your submitted request.</p>
     <p>You will be receiving an email notification when the service request has been assigned to a technician.</p>
@@ -10,7 +10,7 @@
         <p>If you continue to have problems, please contact CSS at (541)343-9160.</p>
     </div>
     <div id="ServiceRequest-form" class="input-form">
-        <form class="form" role="form" id="ServiceRequestForm" name="ServiceRequestForm" ng-submit='submitNewSrq(newSrqForm)' enctype="multipart/form-data">
+        <form class="form" role="form" id="ServiceRequestForm" name="ServiceRequestForm" ng-submit='newSrqController.submitNewSrq(newSrqForm)' enctype="multipart/form-data">
             <fieldset>
             <legend>New Service Request</legend>
                 <ul>
@@ -45,7 +45,7 @@
                         <label for="new_wrq">Work Request</label>
                         <select name="new_wrq" id="new_wrq"  
                                 ng-model="newSrqForm.wrq" required
-                                ng-options="WrqCode.wrq as WrqCode.descr for WrqCode in newServiceRequestController.WrqCodes">
+                                ng-options="WrqCode.wrq as WrqCode.descr for WrqCode in newSrqController.WrqCodes">
 
                         </select>
                         <label for="new_wrq" class="error"></label>

@@ -1,14 +1,7 @@
-<!--
-Cascade Software Systems.
-Copyright 2015
--->
-<!--TODO: Need to make the base href dynamic.
--->
-
 <div ng-app="cssServiceRequest">
     <div id="serv_nav">
         <ul>
-            <li id="new" class="tab tab_active" ><a ng-href="new">New</a></li>
+            <li id="new" class="tab tab_active" active="true"><a ng-href="new">New</a></li>
 
             <li id="search" class="tab"><a ng-href="search">Search</a></li>
         </ul>
@@ -21,3 +14,4 @@ Copyright 2015
 <script src="scripts/ServiceRequests.js" type="text/javascript"></script>
 <script src="scripts/newServiceRequestController.js" type="text/javascript"></script>
 <script src="scripts/searchServiceRequestController.js" type="text/javascript"></script>
+<script src="services/WrqFactory.js" type="text/javascript"></script>

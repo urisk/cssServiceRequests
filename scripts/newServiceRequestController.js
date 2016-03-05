@@ -1,6 +1,9 @@
 angular.module('cssServiceRequest')
-.controller("newServiceRequestFormController",['WrqFactory',
+.controller("newSrqFormController",['WrqFactory',
     function(WrqFactory){
-        WrqCodes = WrqFactory.getAllWrqCodes();
-        alert(WrqCodes[1].descr);
+        self = this;
+        self.WrqCodes=WrqFactory.getAllWrqCodes();
+        
+        self.submitNewSrq = function(Form){            
+        };
 }]);

@@ -15,7 +15,7 @@ angular.module("cssServiceRequest",['ngRoute'])
            controller:'searchSrqFormController',
            controllerAs:'searchSrqController'
         })
-        .otherwise({templateUrl:'views/newServiceRequest.html'});
+        .otherwise({redirectTo: '/new'} );
 
         $locationProvider.html5Mode(true); //to allow html 5 path standards
 }]);
