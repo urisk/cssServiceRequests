@@ -1,7 +1,3 @@
-/* 
- * Cascade Software Systems.
- * Copyright 2015
- */
 angular.module("cssServiceRequest",['ngRoute'])
 .config(['$routeProvider','$locationProvider',function($routeProvider,$locationProvider){
         $routeProvider

@@ -2,8 +2,10 @@ angular.module('cssServiceRequest')
 .controller("newSrqFormController",['WrqFactory',
     function(WrqFactory){
         self = this;
-        self.WrqCodes=WrqFactory.getAllWrqCodes();
-        
+        WrqFactory.getAllWrqCodes().then(function(result) { //promise
+        self.WrqCodes = result;
+        });
+    
         self.submitNewSrq = function(Form){            
         };
 }]);
