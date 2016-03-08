@@ -4,7 +4,12 @@ angular.module("cssServiceRequest",['ngRoute'])
         .when('/new', {
            templateUrl:'views/newServiceRequest.html',
            controller:'newSrqFormController',
-           controllerAs:'newSrqController'
+           controllerAs:'newSrqController',
+           resolve: {
+               initialData: function(WrqFactory){
+                   return WrqFactory.getAllWrqCodes();
+               }
+           }
         })
         .when('/search', {
            templateUrl:'views/searchServiceRequest.html',
